@@ -1,0 +1,183 @@
+:root{
+  --bg:#0b1020;
+  --panel:#111a33;
+  --panel2:#0f1730;
+  --text:#e9ecff;
+  --muted:#9aa4d6;
+  --line:#25305a;
+  --primary:#6d7dff;
+  --primary2:#4f61ff;
+  --danger:#ff5d6d;
+  --ok:#2ee59d;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  background: radial-gradient(1200px 800px at 20% 10%, #152355 0%, var(--bg) 50%) fixed;
+  color:var(--text);
+}
+
+.header{
+  position:sticky; top:0;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 20px;
+  background: rgba(11,16,32,.75);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  z-index:10;
+}
+
+.brand{display:flex; gap:12px; align-items:center}
+.logo{
+  width:44px;height:44px;border-radius:14px;
+  display:grid; place-items:center;
+  background: linear-gradient(135deg, var(--primary), #9b7bff);
+  box-shadow: var(--shadow);
+  font-weight:900;
+}
+.title{font-size:16px;font-weight:800}
+.subtitle{font-size:12px;color:var(--muted);margin-top:2px}
+
+.auth{display:flex; gap:10px; align-items:center}
+.userbox{
+  padding:8px 10px;border:1px solid rgba(255,255,255,.08);
+  border-radius:999px;background: rgba(17,26,51,.7);
+  color:var(--muted);
+  max-width:320px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+
+.main{
+  padding:22px 20px 40px;
+  display:grid;
+  grid-template-columns: 420px 1fr;
+  gap:16px;
+}
+
+@media (max-width: 980px){
+  .main{grid-template-columns:1fr}
+}
+
+.panel{
+  background: linear-gradient(180deg, rgba(17,26,51,.92), rgba(15,23,48,.92));
+  border:1px solid rgba(255,255,255,.07);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+.panelHeader{
+  padding:16px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.panelHeader h2{margin:0 0 12px;font-size:16px}
+.hint{font-size:12px;color:var(--muted);margin-top:10px}
+
+.row{display:flex; align-items:center}
+.gap{gap:10px}
+.wrap{flex-wrap:wrap}
+
+.input, .select{
+  height:38px;
+  padding:0 12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.10);
+  outline:none;
+  background: rgba(8,12,24,.55);
+  color:var(--text);
+  min-width:160px;
+}
+
+.select{min-width:140px}
+.input::placeholder{color:rgba(233,236,255,.45)}
+
+.btn{
+  height:38px;
+  padding:0 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color:var(--text);
+  cursor:pointer;
+  transition:.15s ease;
+}
+.btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.22)}
+.btn.primary{
+  background: linear-gradient(135deg, var(--primary), var(--primary2));
+  border-color: rgba(255,255,255,.18);
+}
+.btn.danger{
+  background: rgba(255,93,109,.12);
+  border-color: rgba(255,93,109,.35);
+  color:#ffd7db;
+}
+.btn.small{height:30px;border-radius:10px;font-size:12px;padding:0 10px}
+
+.hidden{display:none !important}
+
+.grid{
+  padding:16px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
+.card{
+  padding:12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.08);
+  background: rgba(8,12,24,.45);
+}
+.cardTitle{
+  font-weight:800;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.badge{
+  font-size:12px;
+  color:var(--muted);
+  border:1px solid rgba(255,255,255,.10);
+  padding:4px 8px;
+  border-radius:999px;
+}
+.cardMeta{
+  margin-top:8px;
+  font-size:12px;
+  color:var(--muted);
+  display:flex; gap:8px; flex-wrap:wrap;
+}
+
+.stack{padding:16px; display:flex; flex-direction:column; gap:12px}
+
+.post{
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.08);
+  background: rgba(8,12,24,.45);
+  padding:14px;
+}
+.postTop{display:flex; justify-content:space-between; gap:10px; align-items:flex-start}
+.postTitle{font-weight:900}
+.postBody{color:rgba(233,236,255,.82); margin-top:6px; line-height:1.45}
+.postMeta{margin-top:10px; font-size:12px; color:var(--muted); display:flex; gap:10px; flex-wrap:wrap}
+
+.actions{margin-top:12px; display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.sep{opacity:.5}
+.commentBox{margin-top:12px; display:flex; gap:10px; flex-wrap:wrap}
+.commentList{margin-top:10px; display:flex; flex-direction:column; gap:8px}
+.comment{
+  padding:10px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.06);
+  background: rgba(17,26,51,.35);
+}
+.commentMeta{font-size:12px; color:var(--muted); margin-bottom:6px}
+
+.footer{
+  padding:18px 20px 30px;
+  color:rgba(233,236,255,.55);
+  display:flex; gap:10px; justify-content:center; align-items:center;
+}
+.dot{opacity:.5}

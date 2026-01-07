@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vtuber Fan Site</title>
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- ✅ 여기 주입(예시) -->
+  <!--
+  <script>
+    window.__SUPABASE_URL__ = "https://YOUR_PROJECT.supabase.co";
+    window.__SUPABASE_ANON_KEY__ = "YOUR_ANON_KEY";
+  </script>
+  -->
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <div class="logo">V</div>
+      <div>
+        <div class="title">Vtuber Fan Site</div>
+        <div class="subtitle">Google Login · Supabase · Vercel</div>
+      </div>
+    </div>
+
+    <div class="auth">
+      <div id="userBox" class="userbox hidden"></div>
+      <button id="btnLogin" class="btn primary">구글로 로그인</button>
+      <button id="btnLogout" class="btn hidden">로그아웃</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="panel">
+      <div class="panelHeader">
+        <h2>버튜버 목록</h2>
+        <div class="row gap">
+          <input id="vtuberName" class="input" placeholder="버튜버 이름 (예: 아리아)" />
+          <input id="vtuberChannel" class="input" placeholder="채널/링크 (선택)" />
+          <button id="btnAddVtuber" class="btn">추가</button>
+        </div>
+      </div>
+
+      <div id="vtuberList" class="grid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panelHeader">
+        <h2>팬 게시판</h2>
+        <div class="row gap wrap">
+          <select id="vtuberFilter" class="select">
+            <option value="">전체</option>
+          </select>
+          <input id="postTitle" class="input" placeholder="글 제목" />
+          <input id="postBody" class="input" placeholder="내용" />
+          <button id="btnCreatePost" class="btn primary">글 작성</button>
+        </div>
+        <div class="hint">
+          * 글 작성/좋아요/댓글은 로그인 필요. 목록은 누구나 볼 수 있어요.
+        </div>
+      </div>
+
+      <div id="postList" class="stack"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© Fan Site</span>
+    <span class="dot">•</span>
+    <span>Powered by Supabase + Vercel</span>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
